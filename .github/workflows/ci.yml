@@ -16,7 +16,9 @@ jobs:
           node-version: '24'
 
       - name: Instalar dependencias
+        working-directory: ./prac1cicd
         run: npm ci
 
       - name: Validar HTML (html-validate)
+        working-directory: ./prac1cicd
         run: npx html-validate index.html
