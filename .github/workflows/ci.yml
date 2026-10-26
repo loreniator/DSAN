@@ -25,7 +25,7 @@ jobs:
 
       - name: Linting CSS (stylelint)
         working-directory: ./prac1cicd
-        run: npx stylelint "css/**/*.css"
+        run: npx stylelint --config stylelint.config.mjs "css/**/*.css"
 
       - name: Linting JavaScript (eslint)
         working-directory: ./prac1cicd
