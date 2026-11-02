@@ -14,7 +14,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
+          aws-session-token: "IQoJb3JpZ2luX2VjELf//////////wEaCXVzLXdlc3QtMiJGMEQCIHTB80Kyq51GNR3+OyEFQkLP2BUG3oof1NVSpegsUI7iAiADarZ+oAarYn4IKA9D3Fs3d2JXg+TKZdpmphhyzzO3iSq3AgiA//////////8BEAAaDDUzMjIyNTA1NjQxMyIMvut/vIGc0avdiWaXKosCDLMm/sWdse2zLkM5wyF2vVd4CkfXBuORzJ0YHkZV44OPVBcZrZefZ6eJI0ZMi58WROjH+sPQl5jAXf2WsBneJdxurQOzEYmcfkuxXzjKL/ZE3XL0HQ9Tp8WGgmMHhxai5FnRuMahS6m6S/xcI50zbWHZX1y0m+2AMhaRPKYv/ANvD0KxrUYdOadmpe3P5MhF9PHscbiLdIfaEIA4TN7/uQpK7tk5iFqYSIww/7BLDhJScwGCmLWsfTGApOb2d9lao4ccc2irk3I3QpfaWkOK+Kf9g5WO+41RT/4PRlqO0iPqh2Am5tFiGC7QshhBm+IBzrTZgw/w5jr1FMWlbl11ZX2DgqVOWSwW0PfbMK7CotcGOp4BHDytWGTnKAX1LDSZMr5IXAOYy8nqldW8MdMzLRzLztrtZ258k3XrEBNpyiGrCY+w8AJgzHE6Sl8epHkGtK/rRFA+UP+lxYnYs4D5F2zASljycd+WwraoCQEkmvVWORtTihVOoPgDqf08RcRTnul0bjTBt4J1+sqbzQIu0su7PzslJQ6idhayMUcolWii8ToJlu8Tarktv2dipcDevso="
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Copiar los archivos al bucket
