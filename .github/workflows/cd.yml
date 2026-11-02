@@ -24,7 +24,7 @@ jobs:
       - name: Subir archivos de la web
         uses: actions/upload-pages-artifact@v3
         with:
-          patch: './prac1cicd'
+          path: './prac1cicd'
 
       - id: deploy
         uses: actions/deploy-pages@v4
