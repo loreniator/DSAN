@@ -14,18 +14,12 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-session-token: "IQoJb3JpZ2luX2VjELf//////////wEaCXVzLXdlc3QtMiJGMEQCIHTB80Kyq51GNR3+OyEFQkLP2BUG3oof1NVSpegsUI7iAiADarZ+oAarYn4IKA9D3Fs3d2JXg+TKZdpmphhyzzO3iSq3AgiA//////////8BEAAaDDUzMjIyNTA1NjQxMyIMvut/vIGc0avdiWaXKosCDLMm/sWdse2zLkM5wyF2vVd4CkfXBuORzJ0YHkZV44OPVBcZrZefZ6eJI0ZMi58WROjH+sPQl5jAXf2WsBneJdxurQOzEYmcfkuxXzjKL/ZE3XL0HQ9Tp8WGgmMHhxai5FnRuMahS6m6S/xcI50zbWHZX1y0m+2AMhaRPKYv/ANvD0KxrUYdOadmpe3P5MhF9PHscbiLdIfaEIA4TN7/uQpK7tk5iFqYSIww/7BLDhJScwGCmLWsfTGApOb2d9lao4ccc2irk3I3QpfaWkOK+Kf9g5WO+41RT/4PRlqO0iPqh2Am5tFiGC7QshhBm+IBzrTZgw/w5jr1FMWlbl11ZX2DgqVOWSwW0PfbMK7CotcGOp4BHDytWGTnKAX1LDSZMr5IXAOYy8nqldW8MdMzLRzLztrtZ258k3XrEBNpyiGrCY+w8AJgzHE6Sl8epHkGtK/rRFA+UP+lxYnYs4D5F2zASljycd+WwraoCQEkmvVWORtTihVOoPgDqf08RcRTnul0bjTBt4J1+sqbzQIu0su7PzslJQ6idhayMUcolWii8ToJlu8Tarktv2dipcDevso="
+          aws-session-token: "IQoJb3JpZ2luX2VjEF8aCXVzLXdlc3QtMiJIMEYCIQCtzsba7rqD2ev2SjvZ+13UZ7moJDLbghlAUDFWWciNqQIhAOrGoVPd2F/5szZvLZTno1wjAB9LpcSzysGOA3IZJP+PKq4CCCgQABoMNTMyMjI1MDU2NDEzIgyJFSf8+y25OvZVXBIqiwK1tUDLy/4wz/kUb786vWwhY3LTC5i4OilVrasDzmu+tz4G8BORXX2zQGuyITJnvnJ5LfbS+FKjF4CAwyTkOTze/iVZoraNSSj/rs+jlN/I/uaXEPm0mLSAcXl31XN3nYitaxJqGibAne3bgBwA9A4ZRAbEN7GYhjpiAxQ8oz//aplQYUIOtnngZmec2MT+L4LYUEOaJtmyf6Qk0xThG/mY91ivpIDSsIsLAdysRX/qbgOo6aEQAxdwYUux5GkFX2/5CCGK/bpe1o4ywr2f5lxX9XFujDICWovT5IougJWS5nrGKiY5/KvzY6AbcUczEnLbwCCOy1Th/SGwir/V9ssSxMBkcTyjxpuziPgw+rfH1wY6nAFVr3SlnlB9jLmjjOYJEflikEgQa5KX+neMGKGaWQ1QReKhxtcNCbYfnv0QKzf7le+u80Ph1vmDfpL7uFke+LJAmChgyEOgzHzR/2AhwYRKRJPi24cyYyGkVr308gn2h8WvRKiq/QIr9hFRTMUEs20zlgM7Tbf38ZQUICED9ZDbKSJn3HwlvS1ViKuSRywCUegKOjhAkc5z3qhpj7k="
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Copiar los archivos al bucket
         run: |
-          aws s3 sync . s3://${{ secrets.S3_BUCKET }} --delete \
-            --exclude ".git/*" \
-            --exclude ".github/*" \
-            --exclude "node_modules/*" \
-            --exclude "tests/*" \
-            --exclude "package*.json" \
-            --exclude "*.cjs"
+          aws s3 sync ./prac1cicd/ s3://${{ secrets.S3_BUCKET }} --delete
 
       - name: Mostrar el contenido del bucket
         run: aws s3 ls s3://${{ secrets.S3_BUCKET }} --recursive
